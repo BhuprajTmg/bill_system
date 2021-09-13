@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Bill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/CreateInternalFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/CreateInternalFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/DropDown.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/conn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/text.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/login.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/userPannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/userPannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CreateInternalFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DropDown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userPannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userPannel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +26,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="User_Pannel" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="User_Pannel" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1y5o1VDxG0FOA7Hyvs8PjIRcVA6" />
@@ -54,9 +53,16 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.userPannel">
+  <component name="RunManager" selected="Application.login">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="JAVA final project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Register" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Register" />
       <module name="JAVA final project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,9 +84,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.login" />
         <item itemvalue="Application.userPannel" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.login" />
+        <item itemvalue="Application.Register" />
+        <item itemvalue="Application.userPannel" />
       </list>
     </recent_temporary>
   </component>
@@ -105,5 +113,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
