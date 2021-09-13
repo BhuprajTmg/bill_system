@@ -1,21 +1,25 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.*;
 
 public class userPannel implements ActionListener {
 	
 	JFrame j;
 	JLabel lbl_counter,lbl_costumer_id,lbl_scno,background,lbl_transaction_pin;
-	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl;
+	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl,first_lbl,last_lbl;
 	JComboBox choose;
-	JTextField txt_sc_no,txt_costumer_id,txt_transaction_pin;
+	JLabel fname_l,lname_l;
+	JPasswordField txt_transaction_pin;
+	JTextField txt_unit_consumed,txt_costumer_id;
 	Font fon1,fon2,fon3;
 	JButton btn_proceed,btn_exit,btn_cancle,btn_bill,btn_update;
-	public userPannel() {
-		
-		j = new JFrame();   
-		
+	String first_name;
+	public userPannel(String first_name) {
+		this.first_name = first_name;
+		j = new JFrame();
 		fon1 = new Font("arial",Font.BOLD, 24);
 		
 		fon2 = new Font("arial",Font.BOLD, 18);
@@ -39,16 +43,16 @@ public class userPannel implements ActionListener {
 	    lbl_scno.setFont(new Font("times new roman",Font.BOLD,24));
 	    lbl_scno.setBounds(100,490,350,40);
 		j.add(lbl_scno);
-		
-		
-		txt_sc_no = new JTextField();
-		txt_sc_no.setForeground(Color.black);
-		txt_sc_no.setBackground(Color.lightGray);
-		txt_sc_no.setFont(new Font("times new roman",Font.BOLD,24));
-		txt_sc_no.setBounds(100,540,500,40);
-		j.add(txt_sc_no);
+
+
+		txt_unit_consumed = new JTextField();
+		txt_unit_consumed.setForeground(Color.black);
+		txt_unit_consumed.setBackground(Color.lightGray);
+		txt_unit_consumed.setFont(new Font("times new roman",Font.BOLD,24));
+		txt_unit_consumed.setBounds(100,540,500,40);
+		j.add(txt_unit_consumed);
 	
-		lbl_costumer_id = new JLabel("Cotumer Id");
+		lbl_costumer_id = new JLabel("Costumer Id");
 		lbl_costumer_id.setForeground(Color.GREEN);
 		lbl_costumer_id.setFont(new Font("times new roman",Font.BOLD,24));
 		lbl_costumer_id.setBounds(100,585,350,40);
@@ -67,7 +71,7 @@ public class userPannel implements ActionListener {
 		lbl_transaction_pin.setBounds(100,690,350,40);
 		j.add(lbl_transaction_pin);
 		
-		txt_transaction_pin = new JTextField();
+		txt_transaction_pin = new JPasswordField();
 		txt_transaction_pin.setForeground(Color.black);
 		txt_transaction_pin.setBackground(Color.lightGray);
 		txt_transaction_pin.setFont(new Font("times new roman",Font.BOLD,24));
@@ -118,39 +122,65 @@ public class userPannel implements ActionListener {
 		j.add(bill_title);
 
 		JLabel dash_start = new JLabel("############################################################");
+//
+//		fname_l = new JLabel();
+//		fname_l.setBounds(100,100,200,60);
+//		fname_l.setFont(fon2);
+//		j.add(fname_l);
+
 		dash_start.setBounds(1066,420,650,30);
 		dash_start.setFont(fon3);
 		j.add(dash_start);
 
+		JLabel customer_name = new JLabel(" Customer    Name ");
+		customer_name.setBounds(1100,430,300,60);
+		customer_name.setFont(fon1);
+		j.add(customer_name);
+
+		first_lbl = new JLabel();
+		first_lbl.setBounds(1120,470,200,60);
+		first_lbl.setFont(fon2);
+		first_lbl.setText("NaNa");
+		j.add(first_lbl);
+
+		last_lbl = new JLabel();
+		last_lbl.setBounds(1250,470,200,60);
+		last_lbl.setFont(fon2);
+		last_lbl.setText("NaNa");
+		j.add(last_lbl);
+
+
+
 		JLabel customer_id = new JLabel("Customer id: ");
-		customer_id.setBounds(1100,450,200,60);
+		customer_id.setBounds(1100,510,200,60);
 		customer_id.setFont(fon2);
 		j.add(customer_id);
 
+
 		customer_lbl = new JLabel();
-		customer_lbl.setBounds(1250,450,200,60);
+		customer_lbl.setBounds(1250,510,200,60);
 		customer_lbl.setFont(fon2);
 		customer_lbl.setText("NaNa");
 		j.add(customer_lbl);
 
 		JLabel unit_cons = new JLabel("Unit Consumed: ");
-		unit_cons.setBounds(1100,500,200,60);
+		unit_cons.setBounds(1100,545,200,60);
 		unit_cons.setFont(fon2);
 		j.add(unit_cons);
 
 		unit_lbl = new JLabel();
-		unit_lbl.setBounds(1250,500,200,60);
+		unit_lbl.setBounds(1250,545,200,60);
 		unit_lbl.setFont(fon2);
 		unit_lbl.setText("NaNa");
 		j.add(unit_lbl);
 
 		JLabel per_unit = new JLabel("Unit Per Charge: ");
-		per_unit.setBounds(1100,560,200,60);
+		per_unit.setBounds(1100,580,200,60);
 		per_unit.setFont(fon2);
 		j.add(per_unit);
 
 		per_lbl = new JLabel( );
-		per_lbl.setBounds(1250,560,200,60);
+		per_lbl.setBounds(1250,580,200,60);
 		per_lbl.setFont(fon2);
 		per_lbl.setText("NaNa");
 		j.add(per_lbl);
@@ -177,6 +207,7 @@ public class userPannel implements ActionListener {
 		dash_end.setFont(fon3);
 		j.add(dash_end);
 
+		displayName();
 		background.setBounds(0,0,1920,1080);
 		j.add(background);
 		j.setSize(1920,1080);
@@ -184,13 +215,27 @@ public class userPannel implements ActionListener {
 		j.setVisible(true);
 		
 	}
-	public static void main(String[] args){
-		new userPannel();
+	public void displayName(){
+		try {
+			DbConnection db = new DbConnection();
+			String query = "Select first_name,last_name from register_credential where first_name='" + this.first_name + "'";
+			ResultSet rs = db.select(query);
+			while (rs.next()){
+				String first=rs.getString("first_name");
+				String last = rs.getString("last_name");
+				first_lbl.setText(first);
+				last_lbl.setText(last);
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 @Override
 public void actionPerformed(ActionEvent e) {
 	String customer = txt_costumer_id.getText();
-	String unit_consumed = txt_sc_no.getText();
+	String unit_consumed = txt_unit_consumed.getText();
+	String transaction_pin = txt_transaction_pin.getText();
+
 	int per_unit = 6;
 	float sum;
 		if (e.getSource()== btn_bill) {
@@ -199,15 +244,31 @@ public void actionPerformed(ActionEvent e) {
 		System.out.println(txt_costumer_id.getText());
 	}
 
-	else if (e.getSource()==btn_proceed){
-		int total_unit = Integer.parseInt(unit_consumed);
-		sum = per_unit * total_unit;
-		String per_unit_change = String.valueOf(per_unit);
-		String sum_unit = String.valueOf(sum);
-		customer_lbl.setText(customer);
-		unit_lbl.setText(unit_consumed);
-		per_lbl.setText(per_unit_change);
-		total_lbl.setText(sum_unit);
+	else if (e.getSource()==btn_proceed) {
+
+			try {
+				DbConnection db = new DbConnection();
+				String query = "Select t_pin from register_credential where t_pin='" + transaction_pin + "'";
+				ResultSet rs = db.select(query);
+				if (rs.next()) {
+					JOptionPane.showMessageDialog(j, "Transaction Completed Sucessfully");
+					int total_unit = Integer.parseInt(unit_consumed);
+					sum = per_unit * total_unit;
+					String per_unit_change = String.valueOf(per_unit);
+					String sum_unit = String.valueOf(sum);
+					customer_lbl.setText(customer);
+					unit_lbl.setText(unit_consumed);
+					per_lbl.setText(per_unit_change);
+					total_lbl.setText(sum_unit);
+
+				} else {
+					JOptionPane.showMessageDialog(j, "Wong Transaction pin, Try again");
+				}
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+
+		}
 
 
 	}
@@ -216,4 +277,4 @@ public void actionPerformed(ActionEvent e) {
 	
 	
 
-}
+
