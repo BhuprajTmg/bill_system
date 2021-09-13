@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="bill" />
+    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="Register pin update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631562112784</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Register pin update">
+      <created>1631562429535</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631562429535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +123,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bill" />
-    <option name="LAST_COMMIT_MESSAGE" value="bill" />
+    <MESSAGE value="Register pin update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register pin update" />
   </component>
 </project>
