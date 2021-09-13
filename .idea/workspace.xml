@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/userPannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/userPannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userPannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userPannel.java" afterDir="false" />
-    </list>
+    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="Register pin update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +18,12 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="User_Pannel" />
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="User_Pannel" />
+        <entry key="$PROJECT_DIR$" value="Transaction_update" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,6 +92,21 @@
       <option name="presentableId" value="Default" />
       <updated>1631550608259</updated>
     </task>
+    <task id="LOCAL-00001" summary="bill">
+      <created>1631562112784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631562112784</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Register pin update">
+      <created>1631562429535</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631562429535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,5 +120,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bill" />
+    <MESSAGE value="Register pin update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register pin update" />
   </component>
 </project>
