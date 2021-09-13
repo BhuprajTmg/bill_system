@@ -7,10 +7,11 @@ public class userPannel implements ActionListener {
 	
 	JFrame j;
 	JLabel lbl_counter,lbl_costumer_id,lbl_scno,background,lbl_transaction_pin;
+	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl;
 	JComboBox choose;
 	JTextField txt_sc_no,txt_costumer_id,txt_transaction_pin;
 	Font fon1,fon2,fon3;
-	JButton btn_proceed,btn_exit,btn_cancle,btn_bill;
+	JButton btn_proceed,btn_exit,btn_cancle,btn_bill,btn_update;
 	public userPannel() {
 		
 		j = new JFrame();   
@@ -76,21 +77,29 @@ public class userPannel implements ActionListener {
 	    btn_proceed = new JButton("Proceed");
 	    btn_proceed.setForeground(Color.blue);
 	    btn_proceed.setFont(fon2);
-	    btn_proceed.setBounds(695,500,202,40);
+		btn_proceed.addActionListener(this);
+	    btn_proceed.setBounds(695,440,202,40);
 		j.add(btn_proceed);
 		
 		btn_cancle = new JButton("Cancel");
 		btn_cancle.setForeground(Color.blue);
 		btn_cancle.setFont(fon2);
-		btn_cancle.setBounds(695,590,202,40);
+		btn_cancle.setBounds(695,520,202,40);
 		j.add(btn_cancle);
 		
 		btn_bill = new JButton("Bill");
 		btn_bill.setForeground(Color.blue);
 		btn_bill.setFont(fon2);
-		btn_bill.setBounds(695,675,202,40);
+		btn_bill.setBounds(695,598,202,40);
 		btn_bill.addActionListener(this);
 		j.add(btn_bill);
+
+		btn_update = new JButton("Updata Pin");
+		btn_update.setForeground(Color.blue);
+		btn_update.setFont(fon2);
+		btn_update.setBounds(695,675,202,40);
+		btn_update.addActionListener(this);
+		j.add(btn_update);
 	    
 	    
 	    
@@ -102,7 +111,72 @@ public class userPannel implements ActionListener {
 		Image tem_img = img.getScaledInstance(1545,1074, Image.SCALE_SMOOTH);
 		background_ing = new ImageIcon(tem_img);
 		JLabel background = new JLabel("",background_ing,JLabel.LEFT);
-		
+
+		JLabel bill_title = new JLabel("Costumer Electricity Bill");
+		bill_title.setBounds(1100,370,400,50);
+		bill_title.setFont(fon1);
+		j.add(bill_title);
+
+		JLabel dash_start = new JLabel("############################################################");
+		dash_start.setBounds(1066,420,650,30);
+		dash_start.setFont(fon3);
+		j.add(dash_start);
+
+		JLabel customer_id = new JLabel("Customer id: ");
+		customer_id.setBounds(1100,450,200,60);
+		customer_id.setFont(fon2);
+		j.add(customer_id);
+
+		customer_lbl = new JLabel();
+		customer_lbl.setBounds(1250,450,200,60);
+		customer_lbl.setFont(fon2);
+		customer_lbl.setText("NaNa");
+		j.add(customer_lbl);
+
+		JLabel unit_cons = new JLabel("Unit Consumed: ");
+		unit_cons.setBounds(1100,500,200,60);
+		unit_cons.setFont(fon2);
+		j.add(unit_cons);
+
+		unit_lbl = new JLabel();
+		unit_lbl.setBounds(1250,500,200,60);
+		unit_lbl.setFont(fon2);
+		unit_lbl.setText("NaNa");
+		j.add(unit_lbl);
+
+		JLabel per_unit = new JLabel("Unit Per Charge: ");
+		per_unit.setBounds(1100,560,200,60);
+		per_unit.setFont(fon2);
+		j.add(per_unit);
+
+		per_lbl = new JLabel( );
+		per_lbl.setBounds(1250,560,200,60);
+		per_lbl.setFont(fon2);
+		per_lbl.setText("NaNa");
+		j.add(per_lbl);
+
+		JLabel dot = new JLabel("------------------------------------------------------------------------------------------------");
+		dot.setBounds(1066,620,650,30);
+		dot.setFont(fon3);
+		j.add(dot);
+
+		JLabel total = new JLabel("Total Amount: ");
+		total.setBounds(1100,640,200,60);
+		total.setFont(fon2);
+		j.add(total);
+
+		total_lbl = new JLabel( );
+		total_lbl.setBounds(1250,640,200,60);
+		total_lbl.setFont(fon2);
+		total_lbl.setText("NaNa");
+		j.add(total_lbl);
+
+
+		JLabel dash_end = new JLabel("############################################################");
+		dash_end.setBounds(1066,720,650,30);
+		dash_end.setFont(fon3);
+		j.add(dash_end);
+
 		background.setBounds(0,0,1920,1080);
 		j.add(background);
 		j.setSize(1920,1080);
@@ -110,14 +184,32 @@ public class userPannel implements ActionListener {
 		j.setVisible(true);
 		
 	}
+	public static void main(String[] args){
+		new userPannel();
+	}
 @Override
 public void actionPerformed(ActionEvent e) {
-	if (e.getSource()== btn_bill) {
+	String customer = txt_costumer_id.getText();
+	String unit_consumed = txt_sc_no.getText();
+	int per_unit = 6;
+	float sum;
+		if (e.getSource()== btn_bill) {
 		
 		txt_costumer_id.getText();
 		System.out.println(txt_costumer_id.getText());
-		
-		
+	}
+
+	else if (e.getSource()==btn_proceed){
+		int total_unit = Integer.parseInt(unit_consumed);
+		sum = per_unit * total_unit;
+		String per_unit_change = String.valueOf(per_unit);
+		String sum_unit = String.valueOf(sum);
+		customer_lbl.setText(customer);
+		unit_lbl.setText(unit_consumed);
+		per_lbl.setText(per_unit_change);
+		total_lbl.setText(sum_unit);
+
+
 	}
 	
 }
