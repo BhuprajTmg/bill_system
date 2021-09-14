@@ -10,7 +10,7 @@ public class DbConnection {
 		Statement st;
 		int val;
 		ResultSet rows;
-		int upd;
+		int upd,del;
 		
 		public DbConnection() {
 			
@@ -65,6 +65,16 @@ public class DbConnection {
 				exception.printStackTrace();
 			}
 			return upd;
+		}
+
+		public int delete(String query) {
+			try {
+				del = st.executeUpdate(query);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return del;
 		}
 
 		

@@ -145,8 +145,6 @@ public class Update implements ActionListener {
 
         try {
             DbConnection db = new DbConnection();
-//            String query = "update * from register_credential set t_pin where first_name='"+firstname+"',last_name='"+lastname+"',password='"+password+"',t_pin='"+transaction_pin+"'";
-//            int rs = db.update(query);
 
             String query = "update register_credential set first_name = '"+firstname+"',last_name= '"+lastname+"',password='"+password+"', t_pin = '"+transaction_pin+"' where customer_id='"+customerid+"' ";
             int rs = db.update(query);
@@ -156,7 +154,7 @@ public class Update implements ActionListener {
 
             JOptionPane.showMessageDialog(j,"Your data is been updated sucessfully");
             j.dispose();
-            new userPannel(firstname);
+            new login();
         }catch (Exception rel) {
             rel.printStackTrace();
         }

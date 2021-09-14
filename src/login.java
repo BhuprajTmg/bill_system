@@ -116,10 +116,6 @@ public class login implements ActionListener{
 		j.setLayout(null);
 		j.setVisible(true);
 	}
-public static void main(String[]Args){
-        new login();
-}
-
 public void actionPerformed(ActionEvent e) {
 	String user = txt_username.getText();
 	String pass = txt_password.getText();
@@ -138,6 +134,7 @@ public void actionPerformed(ActionEvent e) {
 			JOptionPane.showMessageDialog(j, "Login SuccessFul...");
 			new userPannel(user);
 			j.dispose();
+			
 		}else
 		{
 			JOptionPane.showMessageDialog(j, "Login SuccessFully Failed...");

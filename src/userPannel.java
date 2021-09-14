@@ -9,12 +9,12 @@ public class userPannel implements ActionListener {
 	
 	JFrame j;
 	JLabel lbl_counter,lbl_costumer_id,lbl_scno,background,lbl_transaction_pin;
-	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl,first_lbl,last_lbl;
+	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl,first_lbl,last_lbl,consumed_lbl;
 	JComboBox choose;
 	JPasswordField txt_transaction_pin;
 	JTextField txt_unit_consumed,txt_costumer_id;
 	Font fon1,fon2,fon3,fon4;
-	JButton btn_proceed,btn_exit,btn_cancle,btn_bill,btn_update;
+	JButton btn_proceed,btn_exit,btn_cancle,btn_delete,btn_update;
 	String first_name;
 	public userPannel(String first_name) {
 		this.first_name = first_name;
@@ -93,21 +93,21 @@ public class userPannel implements ActionListener {
 		btn_cancle.setBounds(695,520,202,40);
 		j.add(btn_cancle);
 		
-		btn_bill = new JButton("Bill");
-		btn_bill.setForeground(Color.blue);
-		btn_bill.setFont(fon2);
-		btn_bill.setBounds(695,598,202,40);
-		btn_bill.addActionListener(this);
-		j.add(btn_bill);
+		btn_delete = new JButton("Delete");
+		btn_delete.setForeground(Color.blue);
+		btn_delete.setFont(fon2);
+		btn_delete.setBounds(695,598,202,40);
+		btn_delete.addActionListener(this);
+		j.add(btn_delete);
 
-		btn_update = new JButton("Updata Pin");
+		btn_update = new JButton("Update Data");
 		btn_update.setForeground(Color.blue);
 		btn_update.setFont(fon2);
 		btn_update.setBounds(695,675,202,40);
 		btn_update.addActionListener(this);
 		j.add(btn_update);
-	    
-	    
+
+
 	    
 	 // Setting the background of the window.
 	    ImageIcon background_ing = new ImageIcon("C:\\epay.png");
@@ -193,12 +193,12 @@ public class userPannel implements ActionListener {
 		unit_cons.setForeground(Color.red);
 		j.add(unit_cons);
 
-		unit_lbl = new JLabel();
-		unit_lbl.setBounds(1220,592,200,60);
-		unit_lbl.setFont(fon2);
-		unit_lbl.setForeground(Color.blue);
-		unit_lbl.setText("NaNa");
-		j.add(unit_lbl);
+		consumed_lbl = new JLabel();
+		consumed_lbl.setBounds(1220,592,200,60);
+		consumed_lbl.setFont(fon2);
+		consumed_lbl.setForeground(Color.blue);
+		consumed_lbl.setText("NaNa");
+		j.add(consumed_lbl);
 
 		JLabel dot3 = new JLabel("------------------------------------------------------------------------------------------------");
 		dot3.setBounds(1066,640,650,30);
@@ -219,6 +219,7 @@ public class userPannel implements ActionListener {
 		j.add(total_lbl);
 
 		displayName();
+
 		background.setBounds(0,0,1920,1080);
 		j.add(background);
 		j.setSize(1920,1080);
@@ -241,17 +242,16 @@ public class userPannel implements ActionListener {
 			e.printStackTrace();
 		}
 	}
-
 @Override
 public void actionPerformed(ActionEvent e) {
 		String customer = txt_costumer_id.getText();
 		String unit_consumed = txt_unit_consumed.getText();
 		String transaction_pin = txt_transaction_pin.getText();
-		int per_uni = 7;
+		int per_uni = 6;
 		float sum;
-		if (e.getSource() == btn_bill) {
-			txt_costumer_id.getText();
-			System.out.println(txt_costumer_id.getText());
+		if (e.getSource() == btn_cancle) {
+			new login();
+			j.dispose();
 		}
 		else if (e.getSource() == btn_proceed) {
 			try {
@@ -263,11 +263,12 @@ public void actionPerformed(ActionEvent e) {
 					JOptionPane.showMessageDialog(j, "Transaction Completed Sucessfully");
 					int total_unit = Integer.parseInt(unit_consumed);
 					sum = per_uni * total_unit;
+					System.out.println(sum);
 					String per_unit_change = String.valueOf(per_uni);
-					String sum_unit = String.valueOf(sum);
+					String sum_unit  = String.valueOf(sum);
 					customer_lbl.setText(customer);
-					unit_lbl.setText(unit_consumed);
-					per_lbl.setText(per_unit_change);
+					consumed_lbl.setText(unit_consumed);
+					consumed_lbl.setText(per_unit_change);
 					total_lbl.setText(sum_unit);
 					txt_costumer_id.setText("");
 					txt_unit_consumed.setText("");
@@ -287,25 +288,13 @@ public void actionPerformed(ActionEvent e) {
 
 		}
 		else if (e.getSource() == btn_update) {
-			try {
-				DbConnection db = new DbConnection();
-				String query = "Select first_name, t_pin from register_credential where first_name='"+customer+"' t_pin='" + transaction_pin + "'";
-				ResultSet rs = db.select(query);
-
-				if (rs.next()) {
-					new Update();
-					j.dispose();
-
-				}
-				else {
-					JOptionPane.showMessageDialog(j, "Wong Transaction pin, Try again");
-				}
-			}
-			catch (SQLException es) {
-				es.printStackTrace();
-			}
-
+			new Update();
+			j.dispose();
 	}
+		else if(e.getSource()==btn_delete){
+			new Delete();
+			j.dispose();
+		}
 
 
 }

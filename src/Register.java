@@ -137,10 +137,6 @@ public class Register implements ActionListener{
 
 	}
 
-public static void main(String[] args) {
-	new Register();
-}
-
 @Override
 public void actionPerformed(ActionEvent e) {
 		String customerid = txt_customer_id.getText();
