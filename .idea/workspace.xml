@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="Register pin update">
-      <change afterPath="$PROJECT_DIR$/src/Update.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Delete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/DbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DbConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Users.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/login.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/userPannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/userPannel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Update.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userPannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userPannel.java" afterDir="false" />
     </list>
@@ -32,9 +30,14 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="Register" />
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Transaction_update" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1y5o1VDxG0FOA7Hyvs8PjIRcVA6" />
@@ -53,7 +56,14 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.userPannel">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Delete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Delete" />
+      <module name="JAVA final project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JAVA final project" />
@@ -63,13 +73,6 @@
     </configuration>
     <configuration name="Register" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Register" />
-      <module name="JAVA final project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Update" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Update" />
       <module name="JAVA final project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,11 +94,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Delete" />
         <item itemvalue="Application.userPannel" />
         <item itemvalue="Application.login" />
-        <item itemvalue="Application.Update" />
         <item itemvalue="Application.Register" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -108,6 +111,21 @@
       <option name="presentableId" value="Default" />
       <updated>1631550608259</updated>
     </task>
+    <task id="LOCAL-00001" summary="bill">
+      <created>1631562112784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631562112784</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Register pin update">
+      <created>1631562429535</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631562429535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,5 +139,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bill" />
+    <MESSAGE value="Register pin update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register pin update" />
   </component>
 </project>
