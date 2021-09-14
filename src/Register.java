@@ -17,8 +17,8 @@ import javax.swing.JTextField;
 public class Register implements ActionListener{
 	JFrame j;
 	JButton btn_register,btn_Delete;
-	JLabel heading,lbl_fname,lbl_lname,lbl_contact,lbl_password,heading_two,lbl_pin;
-	JTextField txt_fname, txt_lname,txt_contact,txt_pin;
+	JLabel heading,lbl_fname,lbl_lname,lbl_contact,lbl_password,heading_two,lbl_pin,lbl_customer_id;
+	JTextField txt_fname, txt_lname,txt_contact,txt_pin,txt_customer_id;
 	Font fon1,fon2,fon3;
 	JLabel fname_l,lname_l;
 	JPasswordField txt_password;
@@ -71,6 +71,18 @@ public class Register implements ActionListener{
 		txt_lname.setBounds(590,420,350,40);
 		j.add(txt_lname);
 
+		lbl_customer_id = new JLabel("Costumer ID");
+		lbl_customer_id.setForeground(Color.blue);
+		lbl_customer_id.setFont(fon2);
+		lbl_customer_id.setBounds(770,528,350,40);
+		j.add(lbl_customer_id);
+
+		txt_customer_id = new JTextField();
+		txt_customer_id.setForeground(Color.black);
+		txt_customer_id.setFont(fon3);
+		txt_customer_id.setBounds(770,564,170,40);
+		j.add(txt_customer_id);
+
 
 		lbl_password = new JLabel("Password ");
 		lbl_password.setForeground(Color.blue);
@@ -93,7 +105,7 @@ public class Register implements ActionListener{
 		txt_pin = new JPasswordField();
 		txt_pin.setForeground(Color.black);
 		txt_pin.setFont(fon3);
-		txt_pin.setBounds(590,564,350,40);
+		txt_pin.setBounds(590,564,165,40);
 		j.add(txt_pin);
 
 		btn_register = new JButton("Sign up");
@@ -131,28 +143,27 @@ public static void main(String[] args) {
 
 @Override
 public void actionPerformed(ActionEvent e) {
-	String firstname = txt_fname.getText();
-	String lastname = txt_lname.getText();
-	String password = txt_password.getText();
-	String transaction_pin = txt_pin.getText();
+		String customerid = txt_customer_id.getText();
+		String firstname = txt_fname.getText();
+		String lastname = txt_lname.getText();
+		String password = txt_password.getText();
+		String transaction_pin = txt_pin.getText();
 
-	Users user = new Users();
+		Users user = new Users();
+		user.setTxt_customer_id(customerid);
+		user.setTxt_fname(firstname);
+		user.setTxt_lname(lastname);
+		user.setTxt_password(password);
+		user.setTxt_pin(transaction_pin);
+		System.out.println(user.getTxt_fname());
 
-	user.setTxt_fname(firstname);
-	user.setTxt_lname(lastname);
-	user.setTxt_password(password);
-	user.setTxt_pin(transaction_pin);
-
-	System.out.println(user.getTxt_fname());
-
-	if (e.getSource() == btn_register) {
-		DbConnection db = new DbConnection();
-		String query =  "INSERT INTO register_credential(first_name,last_name,password,t_pin) VALUES('"+user.getTxt_fname()+"','"+user.getTxt_lname()+"','"+user.getTxt_password()+"','"+user.getTxt_pin()+"')";
-		db.insert(query);
-
+		if (e.getSource() == btn_register) {
+			DbConnection db = new DbConnection();
+			String query =  "INSERT INTO register_credential(customer_id,first_name,last_name,password,t_pin) VALUES('"+user.getTxt_customer_id()+"','"+user.getTxt_fname()+"','"+user.getTxt_lname()+"','"+user.getTxt_password()+"','"+user.getTxt_pin()+"')";
+			db.insert(query);
 		}
-	JOptionPane.showMessageDialog(j, "User createed sucessfully");
-	new login();
-	j.dispose();
+		JOptionPane.showMessageDialog(j, "User createed sucessfully");
+		new login();
+		j.dispose();
 	}
 }

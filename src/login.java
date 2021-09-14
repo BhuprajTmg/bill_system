@@ -138,7 +138,8 @@ public void actionPerformed(ActionEvent e) {
 			JOptionPane.showMessageDialog(j, "Login SuccessFul...");
 			new userPannel(user);
 			j.dispose();
-		}else {
+		}else
+		{
 			JOptionPane.showMessageDialog(j, "Login SuccessFully Failed...");
 		}
 		}catch(SQLException throwables) {

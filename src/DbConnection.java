@@ -10,6 +10,7 @@ public class DbConnection {
 		Statement st;
 		int val;
 		ResultSet rows;
+		int upd;
 		
 		public DbConnection() {
 			
@@ -57,6 +58,15 @@ public class DbConnection {
 			}
 			return rows;
 	}
+		public int update(String query) {
+			try {
+				upd = st.executeUpdate(query);
+			} catch (SQLException exception) {
+				exception.printStackTrace();
+			}
+			return upd;
+		}
+
 		
 	public static void main(String[] args) {
 		new DbConnection();

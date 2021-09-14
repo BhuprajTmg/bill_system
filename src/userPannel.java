@@ -11,20 +11,21 @@ public class userPannel implements ActionListener {
 	JLabel lbl_counter,lbl_costumer_id,lbl_scno,background,lbl_transaction_pin;
 	JLabel customer_lbl,unit_lbl,per_lbl,total_lbl,first_lbl,last_lbl;
 	JComboBox choose;
-	JLabel fname_l,lname_l;
 	JPasswordField txt_transaction_pin;
 	JTextField txt_unit_consumed,txt_costumer_id;
-	Font fon1,fon2,fon3;
+	Font fon1,fon2,fon3,fon4;
 	JButton btn_proceed,btn_exit,btn_cancle,btn_bill,btn_update;
 	String first_name;
 	public userPannel(String first_name) {
 		this.first_name = first_name;
 		j = new JFrame();
-		fon1 = new Font("arial",Font.BOLD, 24);
+		fon1 = new Font("times new roman",Font.BOLD, 24);
 		
-		fon2 = new Font("arial",Font.BOLD, 18);
+		fon2 = new Font("times new roman",Font.BOLD, 18);
 		
-		fon3 = new Font("arial",Font.TRUETYPE_FONT, 12);
+		fon3 = new Font("times new roman",Font.TRUETYPE_FONT, 12);
+
+		fon4 = new Font("times new roman",Font.BOLD,35);
 	
 		lbl_counter = new JLabel("NEA Counter");
 		lbl_counter.setForeground(Color.GREEN);
@@ -88,6 +89,7 @@ public class userPannel implements ActionListener {
 		btn_cancle = new JButton("Cancel");
 		btn_cancle.setForeground(Color.blue);
 		btn_cancle.setFont(fon2);
+		btn_cancle.addActionListener(this);
 		btn_cancle.setBounds(695,520,202,40);
 		j.add(btn_cancle);
 		
@@ -108,104 +110,113 @@ public class userPannel implements ActionListener {
 	    
 	    
 	 // Setting the background of the window.
-		
-		
-	    ImageIcon background_ing = new ImageIcon("C:\\p.png");
+	    ImageIcon background_ing = new ImageIcon("C:\\epay.png");
 		Image img = background_ing.getImage();
 		Image tem_img = img.getScaledInstance(1545,1074, Image.SCALE_SMOOTH);
 		background_ing = new ImageIcon(tem_img);
 		JLabel background = new JLabel("",background_ing,JLabel.LEFT);
 
-		JLabel bill_title = new JLabel("Costumer Electricity Bill");
-		bill_title.setBounds(1100,370,400,50);
-		bill_title.setFont(fon1);
+		JLabel bill_title = new JLabel("NEPAL");
+		bill_title.setBounds(1200,379,400,50);
+		bill_title.setForeground(Color.red);
+		bill_title.setFont(fon4);
 		j.add(bill_title);
 
-		JLabel dash_start = new JLabel("############################################################");
-//
-//		fname_l = new JLabel();
-//		fname_l.setBounds(100,100,200,60);
-//		fname_l.setFont(fon2);
-//		j.add(fname_l);
+		JLabel bill_sub_title = new JLabel("ELECTRICITY AUTHORITY");
+		bill_sub_title.setBounds(1145,430,400,50);
+		bill_sub_title.setForeground(Color.red);
+		bill_sub_title.setFont(fon2);
+		j.add(bill_sub_title);
 
-		dash_start.setBounds(1066,420,650,30);
-		dash_start.setFont(fon3);
-		j.add(dash_start);
+		JLabel bill_sub_title2 = new JLabel("Distribution & Costumer Services");
+		bill_sub_title2.setBounds(1175,450,400,50);
+		bill_sub_title2.setForeground(Color.red);
+		bill_sub_title2.setFont(fon3);
+		j.add(bill_sub_title2);
 
-		JLabel customer_name = new JLabel(" Customer    Name ");
-		customer_name.setBounds(1100,430,300,60);
-		customer_name.setFont(fon1);
+		JLabel dot = new JLabel("------------------------------------------------------------------------------------------------");
+		dot.setBounds(1066,469,650,30);
+		dot.setFont(fon3);
+		j.add(dot);
+
+		JLabel electric_bill = new JLabel("ELECTRIC BILL");
+		electric_bill.setBounds(1185,480,400,50);
+		electric_bill.setFont(fon2);
+		electric_bill.setForeground(Color.red);
+		j.add(electric_bill);
+
+		JLabel dot1 = new JLabel("------------------------------------------------------------------------------------------------");
+		dot1.setBounds(1066,507,650,30);
+		dot1.setFont(fon3);
+		j.add(dot1);
+
+		JLabel customer_name = new JLabel(" Customer Name: ");
+		customer_name.setBounds(1070,520,300,60);
+		customer_name.setForeground(Color.red);
+		customer_name.setFont(fon2);
 		j.add(customer_name);
 
+		//Setting the nana as dummy so to get the Users First name from database.
 		first_lbl = new JLabel();
-		first_lbl.setBounds(1120,470,200,60);
+		first_lbl.setBounds(1218,520,200,60);
 		first_lbl.setFont(fon2);
+		first_lbl.setForeground(Color.blue);
 		first_lbl.setText("NaNa");
 		j.add(first_lbl);
 
+		//Setting the nana as dummy so to get the Users Last name from database.
+
 		last_lbl = new JLabel();
-		last_lbl.setBounds(1250,470,200,60);
+		last_lbl.setBounds(1303,520,200,60);
 		last_lbl.setFont(fon2);
+		last_lbl.setForeground(Color.blue);
 		last_lbl.setText("NaNa");
 		j.add(last_lbl);
 
-
-
-		JLabel customer_id = new JLabel("Customer id: ");
-		customer_id.setBounds(1100,510,200,60);
+		JLabel customer_id = new JLabel("Customer ID : ");
+		customer_id.setBounds(1073,556,200,60);
 		customer_id.setFont(fon2);
+		customer_id.setForeground(Color.red);
 		j.add(customer_id);
 
 
 		customer_lbl = new JLabel();
-		customer_lbl.setBounds(1250,510,200,60);
+		customer_lbl.setBounds(1218,556,200,60);
 		customer_lbl.setFont(fon2);
+		customer_lbl.setForeground(Color.blue);
 		customer_lbl.setText("NaNa");
 		j.add(customer_lbl);
 
 		JLabel unit_cons = new JLabel("Unit Consumed: ");
-		unit_cons.setBounds(1100,545,200,60);
+		unit_cons.setBounds(1073,592,200,60);
 		unit_cons.setFont(fon2);
+		unit_cons.setForeground(Color.red);
 		j.add(unit_cons);
 
 		unit_lbl = new JLabel();
-		unit_lbl.setBounds(1250,545,200,60);
+		unit_lbl.setBounds(1220,592,200,60);
 		unit_lbl.setFont(fon2);
+		unit_lbl.setForeground(Color.blue);
 		unit_lbl.setText("NaNa");
 		j.add(unit_lbl);
 
-		JLabel per_unit = new JLabel("Unit Per Charge: ");
-		per_unit.setBounds(1100,580,200,60);
-		per_unit.setFont(fon2);
-		j.add(per_unit);
-
-		per_lbl = new JLabel( );
-		per_lbl.setBounds(1250,580,200,60);
-		per_lbl.setFont(fon2);
-		per_lbl.setText("NaNa");
-		j.add(per_lbl);
-
-		JLabel dot = new JLabel("------------------------------------------------------------------------------------------------");
-		dot.setBounds(1066,620,650,30);
-		dot.setFont(fon3);
-		j.add(dot);
+		JLabel dot3 = new JLabel("------------------------------------------------------------------------------------------------");
+		dot3.setBounds(1066,640,650,30);
+		dot3.setFont(fon3);
+		j.add(dot3);
 
 		JLabel total = new JLabel("Total Amount: ");
-		total.setBounds(1100,640,200,60);
+		total.setBounds(1073,653,200,60);
+		total.setForeground(Color.red);
 		total.setFont(fon2);
 		j.add(total);
 
 		total_lbl = new JLabel( );
-		total_lbl.setBounds(1250,640,200,60);
+		total_lbl.setBounds(1220,653,200,60);
 		total_lbl.setFont(fon2);
+		total_lbl.setForeground(Color.blue);
 		total_lbl.setText("NaNa");
 		j.add(total_lbl);
-
-
-		JLabel dash_end = new JLabel("############################################################");
-		dash_end.setBounds(1066,720,650,30);
-		dash_end.setFont(fon3);
-		j.add(dash_end);
 
 		displayName();
 		background.setBounds(0,0,1920,1080);
@@ -213,8 +224,8 @@ public class userPannel implements ActionListener {
 		j.setSize(1920,1080);
 		j.setLayout(null);
 		j.setVisible(true);
-		
 	}
+
 	public void displayName(){
 		try {
 			DbConnection db = new DbConnection();
@@ -230,36 +241,37 @@ public class userPannel implements ActionListener {
 			e.printStackTrace();
 		}
 	}
+
 @Override
 public void actionPerformed(ActionEvent e) {
-	String customer = txt_costumer_id.getText();
-	String unit_consumed = txt_unit_consumed.getText();
-	String transaction_pin = txt_transaction_pin.getText();
-
-	int per_unit = 6;
-	float sum;
-		if (e.getSource()== btn_bill) {
-		
-		txt_costumer_id.getText();
-		System.out.println(txt_costumer_id.getText());
-	}
-
-	else if (e.getSource()==btn_proceed) {
-
+		String customer = txt_costumer_id.getText();
+		String unit_consumed = txt_unit_consumed.getText();
+		String transaction_pin = txt_transaction_pin.getText();
+		int per_uni = 7;
+		float sum;
+		if (e.getSource() == btn_bill) {
+			txt_costumer_id.getText();
+			System.out.println(txt_costumer_id.getText());
+		}
+		else if (e.getSource() == btn_proceed) {
 			try {
 				DbConnection db = new DbConnection();
-				String query = "Select t_pin from register_credential where t_pin='" + transaction_pin + "'";
+				String query = "Select t_pin from register_credential where  t_pin='" + transaction_pin + "' and customer_id ='"+customer+"'";
 				ResultSet rs = db.select(query);
+
 				if (rs.next()) {
 					JOptionPane.showMessageDialog(j, "Transaction Completed Sucessfully");
 					int total_unit = Integer.parseInt(unit_consumed);
-					sum = per_unit * total_unit;
-					String per_unit_change = String.valueOf(per_unit);
+					sum = per_uni * total_unit;
+					String per_unit_change = String.valueOf(per_uni);
 					String sum_unit = String.valueOf(sum);
 					customer_lbl.setText(customer);
 					unit_lbl.setText(unit_consumed);
 					per_lbl.setText(per_unit_change);
 					total_lbl.setText(sum_unit);
+					txt_costumer_id.setText("");
+					txt_unit_consumed.setText("");
+					txt_transaction_pin.setText("");
 
 				} else {
 					JOptionPane.showMessageDialog(j, "Wong Transaction pin, Try again");
@@ -268,11 +280,35 @@ public void actionPerformed(ActionEvent e) {
 				throwables.printStackTrace();
 			}
 
-		}
+		} else if (e.getSource() == btn_cancle) {
+			txt_costumer_id.setText("");
+			txt_unit_consumed.setText("");
+			txt_transaction_pin.setText("");
 
+		}
+		else if (e.getSource() == btn_update) {
+			try {
+				DbConnection db = new DbConnection();
+				String query = "Select first_name, t_pin from register_credential where first_name='"+customer+"' t_pin='" + transaction_pin + "'";
+				ResultSet rs = db.select(query);
+
+				if (rs.next()) {
+					new Update();
+					j.dispose();
+
+				}
+				else {
+					JOptionPane.showMessageDialog(j, "Wong Transaction pin, Try again");
+				}
+			}
+			catch (SQLException es) {
+				es.printStackTrace();
+			}
 
 	}
-	
+
+
+}
 }
 	
 	

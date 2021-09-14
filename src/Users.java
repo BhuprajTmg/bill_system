@@ -1,11 +1,17 @@
 
 public class Users {
+	private String txt_customer_id;
 	private String txt_fname;
 	private String txt_lname;
 	private String txt_password;
 	private String txt_pin;
-	
-	
+
+	public String getTxt_customer_id(){
+		return txt_customer_id;
+	}
+	public void setTxt_customer_id(String txt_customer_id){
+		this.txt_customer_id = txt_customer_id;
+	}
 	public String getTxt_fname() {
 		return txt_fname;
 	}
@@ -30,7 +36,7 @@ public class Users {
 	public void setTxt_pin(String txt_pin) {
 		this.txt_pin = txt_pin;
 	}
-	
+
 	
 	
 	
