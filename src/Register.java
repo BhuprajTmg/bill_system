@@ -158,7 +158,7 @@ public void actionPerformed(ActionEvent e) {
 			String query =  "INSERT INTO register_credential(customer_id,first_name,last_name,password,t_pin) VALUES('"+user.getTxt_customer_id()+"','"+user.getTxt_fname()+"','"+user.getTxt_lname()+"','"+user.getTxt_password()+"','"+user.getTxt_pin()+"')";
 			db.insert(query);
 		}
-		JOptionPane.showMessageDialog(j, "User createed sucessfully");
+		JOptionPane.showMessageDialog(j, "User created successfully");
 		new login();
 		j.dispose();
 	}
