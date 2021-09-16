@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 import javax.swing.*;
 
@@ -75,13 +76,7 @@ public class login implements ActionListener{
 		btn_login.addActionListener(this);
 		btn_login.setBounds(590,555,140,44);
 		f.add(btn_login);
-//
-//		btn_register = new JButton(" CANCEL ");
-//		btn_register.setForeground(Color.green);
-//		btn_register.setFont(fon2);
-//
-//		j.add(btn_register);
-//
+
 		btn_signup = new JButton(" Sign up ! ");
 		btn_signup.setForeground(Color.BLUE);
 		btn_signup.setFont(fon2);
@@ -95,10 +90,6 @@ public class login implements ActionListener{
 		back_ground.setBounds(580,250,400,400);
 		f.add(back_ground);
 
-//		ImageIcon background_ing = new ImageIcon("C:\\top.png");
-//		JLabel background = new JLabel("",background_ing,JLabel.CENTER);
-//		background.setBounds(0,0,1920,1080);
-//		j.add(background);
 
 		// Setting the background of the window.
 		ImageIcon background_ing = new ImageIcon("C:\\top.png");
@@ -109,9 +100,6 @@ public class login implements ActionListener{
 
 		background.setBounds(0,0,1920,1080);
 		f.add(background);
-
-
-
 
 		f.setSize(1920,1080);
 		f.setLayout(null);
@@ -124,33 +112,44 @@ public void actionPerformed(ActionEvent e) {
 	String user = txt_username.getText();
 	String pass = txt_password.getText();
 
+	Users u = new Users();
+	u.setUser(user);
+	u.setPass(pass);
 
 	if (e.getSource()==btn_signup) {
 		new Register();
 		}
 	if (e.getSource()==btn_login) {
-		// Open a connection
-		try {
-		DbConnection db = new DbConnection();
-		String query = "Select first_name,password from register_credential where first_name='"+user+"' and  password='"+pass+"'";
-		ResultSet rs = db.select(query);
-		if(rs.next()) {
-			JOptionPane.showMessageDialog(f, "Login SuccessFul...");
-			new AccountLogin(user);
-			f.dispose();
+		if (Objects.equals(u.getUser(), "") || Objects.equals(u.getPass(), "")) {
+			JOptionPane.showMessageDialog(f,"Fill Up The Empty Spaces.");
+		}else {
+				try {
+					DbConnection db = new DbConnection();
+					String query = "Select first_name,password from register_credential where first_name='"+user+"' and  password='"+pass+"'";
+					ResultSet rs = db.select(query);
+					if(rs.next()) {
+						JOptionPane.showMessageDialog(f, "Logging You To Your Account.");
+						new AccountLogin(user);
+						f.dispose();
 
-		}else
-		{
-			JOptionPane.showMessageDialog(f, "Login SuccessFully Failed...");
+					}else
+					{
+						JOptionPane.showMessageDialog(f, "Wrong UserName or Password.");
+						txt_password.setText("");
+					}
+				}catch(SQLException throwable) {
+					throwable.printStackTrace();
+				}
+			}
 		}
-		}catch(SQLException throwables) {
-			throwables.printStackTrace();
-		}
+		// Open a connection
+
+
 
 	}
 
 
-}}
+}
 
 
 

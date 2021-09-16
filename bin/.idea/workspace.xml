@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="Data delete, update">
-      <change afterPath="$PROJECT_DIR$/src/AccountLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Confirm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CreateAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyAccount.java" afterDir="false" />
+    <list default="true" id="bf674581-17b1-42be-a0bc-99b6c63676c8" name="Changes" comment="account dashboard">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_4_23_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_4_23_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_8_19_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_8_19_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_09_2021_11_55_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_09_2021_11_55_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_1_40_am__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_1_40_am__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_4_23_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_4_23_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_8_19_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_8_19_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JAVA final project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JAVA final project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/DbConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/DbConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_4_23_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_4_23_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_8_19_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_09_2021_8_19_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_13_09_2021_11_55_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_13_09_2021_11_55_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_1_40_am__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_1_40_am__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_4_23_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_4_23_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_8_19_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_14_09_2021_8_19_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AccountLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AccountLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Confirm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/DbConnectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DbConnectionTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/login.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/userPannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/userPannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Confirm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Confirm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userPannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userPannel.java" afterDir="false" />
     </list>
@@ -38,6 +47,11 @@
     <option name="BRANCH" value="Register" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Account_DashBoard" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -80,29 +94,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.userPannel">
-    <configuration name="AccountLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AccountLogin" />
-      <module name="JAVA final project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="JAVA final project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyAccount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyAccount" />
-      <module name="JAVA final project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="login" />
       <module name="JAVA final project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,13 +108,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DbConnectionTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA final project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DbConnectionTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DbConnectionTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA final project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DbConnectionTest" />
+      <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DbConnectionTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA final project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DbConnectionTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.userPannel" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.login" />
-        <item itemvalue="Application.AccountLogin" />
-        <item itemvalue="Application.MyAccount" />
+        <item itemvalue="JUnit.DbConnectionTest.delete" />
+        <item itemvalue="JUnit.DbConnectionTest.insert" />
+        <item itemvalue="JUnit.DbConnectionTest.update" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631630173266</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="account dashboard">
+      <created>1631791490133</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631791490148</updated>
+    </task>
+    <task id="LOCAL-00003" summary="account dashboard">
+      <created>1631791575741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631791575741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +195,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Data delete, update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data delete, update" />
+    <MESSAGE value="account dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="account dashboard" />
   </component>
 </project>

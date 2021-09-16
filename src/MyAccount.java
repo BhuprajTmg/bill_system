@@ -111,12 +111,12 @@ public class MyAccount implements ActionListener {
         j.setVisible(true);
 
     }
-//
-//    public static void main(String[] args) {
-//        new MyAccount();
-//    }
-//
-//
+
+    public static void main(String[] args) {
+        new MyAccount("uma");
+    }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -142,8 +142,6 @@ public class MyAccount implements ActionListener {
             exc.printStackTrace();
         }
 
-
-
         int d_amunt = Integer.parseInt(depo_amount);
 
         int new_amount = final_amount + d_amunt ;
@@ -152,22 +150,28 @@ public class MyAccount implements ActionListener {
 
 
         if(e.getSource()==btn_deposit){
-            try {
-                DbConnection db = new DbConnection();
-
-                String query = "update Account SET amount = '"+Final_d_a+"' where password = '"+password+"' ";
-
-                db.update(query);
-
-                System.out.println("data is updated.");
-
-                JOptionPane.showMessageDialog(j,"Your amount has been deposited successfully");
-                new userPannel(username,password);
-                j.dispose();
-
-            }catch (Exception rel) {
-                rel.printStackTrace();
+            if (depo_amount.equals("") || account.equals("") || password.equals("")){
+                JOptionPane.showMessageDialog(j,"Fill up the empty space.","My account",JOptionPane.PLAIN_MESSAGE);
             }
+            else {
+                try {
+                    DbConnection db = new DbConnection();
+
+                    String query = "update Account SET amount = '"+Final_d_a+"' where password = '"+password+"' ";
+
+                    db.update(query);
+
+                    System.out.println("data is updated.");
+
+                    JOptionPane.showMessageDialog(j,"Your amount has been deposited successfully","My account",JOptionPane.PLAIN_MESSAGE);
+                    new userPannel(username,password);
+                    j.dispose();
+
+                }catch (Exception rel) {
+                    rel.printStackTrace();
+                }
+            }
+
 
         }else if(e.getSource() ==btn_c_account){
 

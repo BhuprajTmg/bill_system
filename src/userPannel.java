@@ -297,11 +297,6 @@ public class userPannel  implements ActionListener {
 		}
 	}
 
-	public static void main(String[] args) {
-		new userPannel("Saroj", "1");
-
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -310,7 +305,7 @@ public class userPannel  implements ActionListener {
 		String unit_consumed = txt_unit_consumed.getText();
 		String transaction_pin = txt_transaction_pin.getText();
 		String total = total_lbl.getText();
-		String dd = choose.getSelectedItem().toString();
+		String dd = Objects.requireNonNull(choose.getSelectedItem()).toString();
 
 		Users u = new Users();
 		u.setCustomer(customer);
@@ -354,7 +349,7 @@ public class userPannel  implements ActionListener {
 						customer_lbl.setText(customer);
 						consumed_lbl.setText(unit_consumed);
 						consumed_lbl.setText(per_unit_change);
-						lbl_nea_counter.setText(u.getChoose());
+						lbl_nea_counter.setText(dd);
 						total_lbl.setText(sum_unit);
 						total_your_lbl.setText(String.valueOf(this.your_amount));
 						in_word.setText("Rs. " + sum + " has been deduced successfully.");
@@ -375,7 +370,7 @@ public class userPannel  implements ActionListener {
 
 
 					} else {
-						JOptionPane.showMessageDialog(j, "Wrong Transaction pin, Try again");
+						JOptionPane.showMessageDialog(j, "Wrong Customer id or Transaction pin, Try again");
 
 					}
 

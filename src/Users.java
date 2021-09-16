@@ -1,5 +1,7 @@
 
 public class Users {
+	private String user;
+	private String pass;
 	private String txt_customer_id;
 	private String txt_fname;
 	private String txt_lname;
@@ -13,6 +15,22 @@ public class Users {
 	public String transaction_pin;
 	public String total;
 	public String dd;
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 
 	public String getDd() {
 		return dd;
