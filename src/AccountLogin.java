@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class AccountLogin implements ActionListener {
     JFrame j;
@@ -66,14 +67,14 @@ public class AccountLogin implements ActionListener {
         btn_login.setForeground(Color.blue);
         btn_login.setFont(fon2);
         btn_login.addActionListener(this);
-        btn_login.setBounds(590, 610, 160, 40);
+        btn_login.setBounds(590, 580, 160, 40);
         j.add(btn_login);
 
         btn_c_account = new JButton("Create Ac.");
         btn_c_account.setForeground(Color.blue);
         btn_c_account.setFont(fon2);
         btn_c_account.addActionListener(this);
-        btn_c_account.setBounds(780, 610, 160, 40);
+        btn_c_account.setBounds(780, 580, 160, 40);
         j.add(btn_c_account);
 
         ImageIcon sec_backgroung = new ImageIcon("C:\\data.png");
@@ -97,13 +98,7 @@ public class AccountLogin implements ActionListener {
 
 
     }
-//    public void clear(){
-//        logi
-//
-//    }
-//public static void main(String[] args){
-//        new AccountLogin();
-//}
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -114,22 +109,29 @@ public class AccountLogin implements ActionListener {
 
 
         if (e.getSource()==btn_login) {
-            // Open a connection
-            try {
-                DbConnection db = new DbConnection();
-                String query = "Select account_number,password from Account where account_number='"+ac_number+"' and  password='"+password+"'";
-                ResultSet rs = db.select(query);
-                if(rs.next()) {
-                    JOptionPane.showMessageDialog(j, "Login SuccessFul...");
-                    new userPannel(username,password);
-                    j.dispose();
+            if(Objects.equals(ac_number, "") || Objects.equals(password, "")){
+                JOptionPane.showMessageDialog(j,"Fill Up The Empty Spaces.","Account Login",JOptionPane.PLAIN_MESSAGE);
 
-                }else
-                {
-                    JOptionPane.showMessageDialog(j, "Login SuccessFully Failed...");
+            }
+            else {
+                // Open a connection
+                try {
+                    DbConnection db = new DbConnection();
+                    String query = "Select account_number,password from Account where account_number='"+ac_number+"' and  password='"+password+"'";
+                    ResultSet rs = db.select(query);
+                    if(rs.next()) {
+                        JOptionPane.showMessageDialog(j, "Login Successful ");
+                        new userPannel(username,password);
+                        j.dispose();
+
+                    }else
+                    {
+                        JOptionPane.showMessageDialog(j, "No Data Found In Database");
+                    }
+                }catch(SQLException throwables) {
+                    throwables.printStackTrace();
                 }
-            }catch(SQLException throwables) {
-                throwables.printStackTrace();
+
             }
 
         }

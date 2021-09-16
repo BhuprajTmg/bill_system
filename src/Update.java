@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.ImageIcon;
@@ -15,7 +16,7 @@ import javax.swing.JTextField;
 
 public class Update implements ActionListener {
     JFrame j;
-    JButton btn_Update,btn_Delete;
+    JButton btn_Update;
     JLabel heading,lbl_fname,lbl_lname,lbl_contact,lbl_password,heading_two,lbl_pin,lbl_customer_id;
     JTextField txt_fname, txt_lname,txt_contact,txt_pin,txt_customer_id;
     Font fon1,fon2,fon3;
@@ -134,7 +135,9 @@ public class Update implements ActionListener {
         j.setVisible(true);
 
         }
-
+public static void main(String[] args){
+        new Update();
+}
     @Override
     public void actionPerformed(ActionEvent e) {
         String customerid = txt_customer_id.getText();
@@ -143,20 +146,28 @@ public class Update implements ActionListener {
         String password = txt_password.getText();
         String transaction_pin = txt_pin.getText();
 
-        try {
-            DbConnection db = new DbConnection();
+        if (e.getSource()==btn_Update){
+            if (customerid.equals("") || firstname.equals("") || lastname.equals("") || password.equals("") || transaction_pin.equals("")){
+                JOptionPane.showMessageDialog(j,"Fill up all the empty spaces.","Update Data",JOptionPane.PLAIN_MESSAGE);
 
-            String query = "update register_credential set first_name = '"+firstname+"',last_name= '"+lastname+"',password='"+password+"', t_pin = '"+transaction_pin+"' where customer_id='"+customerid+"' ";
-            int rs = db.update(query);
+            }else {
+                try {
+                    DbConnection db = new DbConnection();
 
-            System.out.println("data is updated.");
+//                    update updateIfConditionDemo set UserAge =if(UserAge =23,26,UserAge);
+
+                    String query = "update register_credential set first_name = '"+firstname+"',last_name= '"+lastname+"',password='"+password+"', t_pin = '"+transaction_pin+"' where customer_id='"+customerid+"' ";
+                    int rs = db.update(query);
 
 
-            JOptionPane.showMessageDialog(j,"Your data is been updated sucessfully");
-            j.dispose();
-            new login();
-        }catch (Exception rel) {
-            rel.printStackTrace();
+                    JOptionPane.showMessageDialog(j,"Your data is updated successfully");
+                    j.dispose();
+                    new login();
+                }catch (Exception rel) {
+                    rel.printStackTrace();
+                }
+
+            }
         }
 
 
