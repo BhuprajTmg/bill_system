@@ -173,11 +173,7 @@ public class MyAccount implements ActionListener {
             }
 
 
-        }else if(e.getSource() ==btn_c_account){
-
-
         }
-
     }
 }
 

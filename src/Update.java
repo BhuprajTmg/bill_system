@@ -21,6 +21,7 @@ public class Update implements ActionListener {
     JTextField txt_fname, txt_lname,txt_contact,txt_pin,txt_customer_id;
     Font fon1,fon2,fon3;
     JPasswordField txt_password;
+
     public Update() {
 
         j = new JFrame();
