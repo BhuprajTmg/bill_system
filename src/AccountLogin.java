@@ -137,6 +137,7 @@ public class AccountLogin implements ActionListener {
         }
         else if (e.getSource()==btn_c_account){
             new CreateAccount();
+            j.dispose();
         }
 
     }
